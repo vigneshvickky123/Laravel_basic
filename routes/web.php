@@ -19,6 +19,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('simple',[sampleController::class,'index']);
+Route::view('register','sample');
 Route::post('simple',[sampleController::class,'store']);
 
