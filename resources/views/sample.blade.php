@@ -11,12 +11,15 @@
 		<div class="row" style="margin-left: 100px; margin-top: 100px;">
 			<div class="column"  >
 				<input type="text" style="width: 250px;" name="name" placeholder="Enter your Name"></br>
+				 <span style="color:red;">@error ('name')<li>{{$message}}</li>@enderror</span> 
 			</div>
 			<div class="column" style=" margin-top: 10px;">
 				<input type="Number" style="width: 250px;" name="mobile" placeholder="Enter your mobile Number"></br>
+				<span style="color:red;">@error ('mobile')<li>{{$message}}</li>@enderror</span> 
 			</div>
 			<div class="column" style=" margin-top: 10px;">
 				<input type="email" style="width: 250px;" name="email" placeholder="Enter your email"></br>
+				<span style="color:red;">@error ('email')<li>{{$message}}</li>@enderror</span> 
 			</div>
 			<div class="column" style=" margin-top: 10px;">
 				<input type="submit" name="submit" class="btn btn-success">
