@@ -14,7 +14,8 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $middleware = [
-        // \App\Http\Middleware\TrustHosts::class,
+        
+        //\App\Http\Middleware\ageCheck::class,
         \App\Http\Middleware\TrustProxies::class,
         \Fruitcake\Cors\HandleCors::class,
         \App\Http\Middleware\PreventRequestsDuringMaintenance::class,
@@ -43,6 +44,10 @@ class Kernel extends HttpKernel
             'throttle:api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
+        //Group middleware for ageCheck
+        //'protectedpage'=>[
+          //  \App\Http\Middleware\ageCheck::class,
+        //]
     ];
 
     /**
@@ -53,6 +58,7 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
+        'protectedpage' => \App\Http\Middleware\ageCheck::class,
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,
